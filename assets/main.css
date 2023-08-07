@@ -1,0 +1,18 @@
+a {
+  text-decoration: none;
+}
+.anchor-teal{
+  color: #009688 !important
+}
+.custom-btn{
+  color: rgba(255, 255, 255, 0.12) !important
+}
+.custom-btn span{
+  color: #fff !important
+}
+@media (max-width: 960px){
+  .custom-align{
+    text-align: center;
+    text-align: -webkit-center;
+  }
+}
