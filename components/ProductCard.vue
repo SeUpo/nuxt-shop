@@ -4,7 +4,19 @@
     class="mb-6"
   >
     <n-link class="product-card-content" :to="'/product/' + productData._id">
+      <v-sheet
+        v-show="!isLoaded"
+          max-width="260px"
+          max-height="235px"
+      >
+        <v-skeleton-loader
+          class="mx-auto"
+          type="image"
+        ></v-skeleton-loader>
+      </v-sheet>
       <v-img
+        v-show="onImgLoad"
+        @load="onImgLoad"
         max-width="260px"
         max-height="235px"
         :src="productData.imageUrl"
@@ -35,6 +47,16 @@ export default {
           return {}
       }
     }
+  },
+  data() {
+    return {
+      isLoaded: false,
+    }
+  },
+  methods: {
+    onImgLoad() {
+      this.isLoaded = true
+    },
   },
 }
 </script>
